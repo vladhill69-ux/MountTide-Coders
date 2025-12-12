@@ -337,13 +337,15 @@ section {
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr); /* single column */
-  max-width: 900px;                      /* nicely centered block */
-  margin: 0 auto;                        /* center within container */
-  gap: 2.4rem;
-  align-items: center;
+  max-width: 900px;      /* keep it nicely centered */
+  margin: 0 auto;
 }
+
+/* we’re not using the hero media at all anymore */
+.hero-media {
+  display: none;
+}
+
 .hero-media {
   display: none;
 }
