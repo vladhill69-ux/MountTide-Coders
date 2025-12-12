@@ -139,7 +139,7 @@ section {
 /* Bigger, glowy navbar logo */
 
 .logo-img {
-  height: 80px; /* main logo size */
+  height: 100px;          /* bigger */
   width: auto;
   flex-shrink: 0;
 
@@ -150,13 +150,17 @@ section {
   box-shadow:
     0 0 22px rgba(47, 209, 180, 0.75),
     0 14px 30px rgba(0, 0, 0, 0.9);
-  object-fit: contain;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
+
+.logo-text .logo-main {
+  font-size: 1.05rem;
 }
+
+.logo-text .logo-sub {
+  font-size: 0.8rem;
+}
+
 
 .logo-main {
   font-family: "Montserrat", system-ui, sans-serif;
@@ -208,6 +212,10 @@ section {
 .nav-links a:hover::after,
 .nav-links a:focus-visible::after {
   transform: scaleX(1);
+}
+.nav {
+  align-items: center;
+  min-height: 120px;   /* prevents header collapse when logo grows */
 }
 
 /* Burger */
@@ -853,5 +861,11 @@ footer {
 .hero-media img {
   display: none !important;
 }
+   @media (max-width: 720px) {
+  .logo-img {
+    height: 75px;   /* still big but not overwhelming */
+  }
+}
+
 
 }
