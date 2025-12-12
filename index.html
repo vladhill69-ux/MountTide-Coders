@@ -1,1 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Hill Web Studio | Custom Websites for Small Businesses</title>
+
+  <meta name="description" content="Hill Web Studio designs and builds clean, fast, mobile-first websites for small businesses, tradies and local brands in New Zealand." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body id="top">
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#top" class="logo" aria-label="Hill Web Studio home">
+        <div class="logo-mark">H</div>
+        <div class="logo-text">
+          <span class="logo-main">Hill Web Studio</span>
+          <span class="logo-sub">Custom Websites • NZ</span>
+        </div>
+      </a>
+
+      <div class="nav-links" role="menubar">
+        <a href="#services" role="menuitem">Services</a>
+        <a href="#work" role="menuitem">Portfolio</a>
+        <a href="#process" role="menuitem">Process</a>
+        <a href="#about" role="menuitem">About</a>
+        <a href="#contact" role="menuitem">Contact</a>
+      </div>
+
+      <a href="#contact" class="btn btn-primary nav-cta">Book a site</a>
+
+      <button class="burger" id="burgerButton" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <div class="burger-lines"></div>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#work">Portfolio</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary" style="margin-top:.4rem;align-self:flex-start;">Book a site</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">
+          <span>Freelance web designer</span>
+          Tauranga • New Zealand
+        </div>
+
+        <h1 id="hero-heading" class="hero-title">
+          Clean, custom websites<br/>
+          <span class="hero-highlight">that actually feel like your brand.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          I design and build fast, mobile-first websites for small businesses, tradies and local brands.
+          No bloated templates, no confusing tech – just a site that makes you look professional and brings you more enquiries.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Let’s build your site</a>
+          <a href="#work" class="btn btn-outline">See recent work</a>
+        </div>
+
+        <div class="hero-meta" aria-label="Quick facts">
+          <div class="hero-meta-item">
+            <div class="hero-meta-dot"></div>
+            <span>Custom coded (HTML, CSS, JS) – not just drag & drop</span>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-dot"></div>
+            <span>Optimised for mobile, speed and clarity</span>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-dot"></div>
+            <span>Perfect for small businesses and side hustles</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-label="Project highlight">
+        <div class="hero-card">
+          <span class="hero-card-tag">Featured build</span>
+          <h2>Smoke Spot Barbeque</h2>
+          <p>Dark, neon BBQ brand site with glowing menu boards and mobile-friendly layout.</p>
+          <ul>
+            <li>Custom design + coding</li>
+            <li>Menu board integration</li>
+            <li>Red neon brand system</li>
+          </ul>
+          <a href="https://vladhill69-ux.github.io/SmokeSpot/" target="_blank" class="hero-card-link">
+            View live site ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Services</div>
+        <h2 id="services-heading" class="section-title">What I can build for you.</h2>
+        <p class="section-subtitle">
+          Simple, clear packages – no agency fluff. We can always tweak things to fit your budget and goals.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <h3>One-Page Starter Site</h3>
+          <p>Perfect for tradies, side hustles and “I just need something clean online.”</p>
+          <ul>
+            <li>Single-page scrolling site</li>
+            <li>Custom design & layout</li>
+            <li>Mobile friendly & fast</li>
+            <li>Contact details & call button</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">From $650</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Full Business Website</h3>
+          <p>For growing businesses that need multiple pages and more content.</p>
+          <ul>
+            <li>3–6 custom pages</li>
+            <li>Services & portfolio sections</li>
+            <li>Contact form & call-to-action</li>
+            <li>Basic on-page SEO setup</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">From $1,500</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Redesign & Cleanup</h3>
+          <p>Your current site feels old or messy? I’ll rebuild it clean, modern and clear.</p>
+          <ul>
+            <li>Design refresh + new layout</li>
+            <li>Content tidy & structure</li>
+            <li>Speed and mobile improvements</li>
+            <li>Keep your existing domain</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">From $900</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="work" aria-labelledby="work-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Portfolio</div>
+        <h2 id="work-heading" class="section-title">Recent work & concepts.</h2>
+        <p class="section-subtitle">
+          A mix of live client projects and concept designs. As I build more sites, I’ll keep this section updated.
+        </p>
+      </div>
+
+      <div class="portfolio-grid">
+        <article class="portfolio-card">
+          <div class="portfolio-thumb thumb-smokespot"></div>
+          <div class="portfolio-content">
+            <h3>Smoke Spot Barbeque</h3>
+            <p>Dark, high-contrast BBQ brand site with logo glow, menu boards and mobile-friendly layout.</p>
+            <span class="portfolio-tag">Live project</span>
+          </div>
+          <a href="https://vladhill69-ux.github.io/SmokeSpot/" target="_blank" class="portfolio-link">View site ↗</a>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-thumb thumb-placeholder"></div>
+          <div class="portfolio-content">
+            <h3>Local Tradie Template</h3>
+            <p>Concept design for electricians, plumbers and builders – clean, bold, easy to skim on mobile.</p>
+            <span class="portfolio-tag">Concept</span>
+          </div>
+          <span class="portfolio-link portfolio-link-disabled">Available slot</span>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-thumb thumb-placeholder-2"></div>
+          <div class="portfolio-content">
+            <h3>Service Business Landing Page</h3>
+            <p>Minimal one-page layout with strong call-to-action and clear service breakdown.</p>
+            <span class="portfolio-tag">Concept</span>
+          </div>
+          <span class="portfolio-link portfolio-link-disabled">Available slot</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Process</div>
+        <h2 id="process-heading" class="section-title">Simple, transparent build process.</h2>
+        <p class="section-subtitle">
+          No mystery agency steps. You’ll always know what I’m working on and what’s coming next.
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-item">
+          <div class="process-number">1</div>
+          <div class="process-body">
+            <h3>Quick call & brief</h3>
+            <p>We jump on a quick call or message chat. You tell me about your business, goals and budget.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <div class="process-number">2</div>
+          <div class="process-body">
+            <h3>Design & build</h3>
+            <p>I design the layout and build the site. You see previews and can request tweaks as we go.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <div class="process-number">3</div>
+          <div class="process-body">
+            <h3>Launch & support</h3>
+            <p>We connect your domain, go live, and I make sure everything works cleanly on mobile & desktop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container about-grid">
+      <div>
+        <div class="section-header">
+          <div class="section-kicker">About</div>
+          <h2 id="about-heading" class="section-title">Hey, I’m Vlad – your “make it look clean” guy.</h2>
+          <p class="section-subtitle">
+            I like building sites that feel sharp, modern and easy to use. I’m not an agency – just someone who actually enjoys the craft.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <p>
+            I focus on small businesses, tradies, food trucks, side hustles and anyone who wants a website
+            that feels like <em>them</em>, not a generic template.
+          </p>
+          <ul class="about-list">
+            <li>Custom-coded layouts with clean structure.</li>
+            <li>Dark, bold and high-contrast designs are my speciality.</li>
+            <li>Happy to explain things in plain language, no tech jargon.</li>
+            <li>Based in NZ, but can work with anyone online.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="about-side">
+        <div class="about-card">
+          <h3>Good fit if you:</h3>
+          <ul class="about-list">
+            <li>Want to look more professional online.</li>
+            <li>Need something mobile-friendly that loads fast.</li>
+            <li>Prefer direct communication with the person building your site.</li>
+            <li>Like clean, modern design with a bit of personality.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container contact-grid">
+      <div>
+        <div class="section-header">
+          <div class="section-kicker">Contact</div>
+          <h2 id="contact-heading" class="section-title">Ready to talk about your website?</h2>
+          <p class="section-subtitle">
+            Send a quick message with what you do and what you’re thinking, and I’ll reply with ideas and a rough price range.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-details">
+            <div>
+              <span>Phone</span>
+              <a href="tel:02040651315">020 4065 1315</a>
+            </div>
+            <div>
+              <span>Email</span>
+              <a href="mailto:hello@hillwebstudio.co.nz">hello@hillwebstudio.co.nz</a>
+            </div>
+            <div>
+              <span>Based in</span>
+              <p>Tauranga, New Zealand – working with clients anywhere.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="projectType">What do you need? *</label>
+            <select id="projectType" name="projectType" required>
+              <option value="">Select an option</option>
+              <option>New one-page site</option>
+              <option>Full business website</option>
+              <option>Redesign existing site</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell me about your business *</label>
+            <textarea id="message" name="message" rows="4" required placeholder="What do you do, and what would a good website help with?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send enquiry</button>
+          <p id="contactResult" class="form-result" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-mark logo-mark-small">H</div>
+        <div>
+          <p class="footer-title">Hill Web Studio</p>
+          <p class="footer-tagline">Custom websites for small businesses & local brands.</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#work">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Hill Web Studio. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:02040651315" class="call-now-btn" aria-label="Call Hill Web Studio">
+  📞
+</a>
+
+</body>
+</html>
 
