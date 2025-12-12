@@ -3,12 +3,11 @@
    ============================ */
 
 :root {
-  /* Beach / Mount palette */
   --bg: #021420;
   --bg-alt: #052132;
-  --accent: #ffd75a;        /* sun yellow */
-  --accent-soft: #ffe99a;   /* soft sand */
-  --accent-alt: #2fd1b4;    /* aqua */
+  --accent: #ffd75a;
+  --accent-soft: #ffe99a;
+  --accent-alt: #2fd1b4;
   --text-main: #fdfefe;
   --text-muted: #c4def5;
   --border-subtle: #123349;
@@ -28,19 +27,6 @@ body {
   padding: 0;
   scroll-behavior: smooth;
 }
-.logo-img {
-  height: 44px;          /* controls size – change if you want smaller/bigger */
-  width: auto;
-  border-radius: 12px;   /* soft rounded corners */
-  border: 2px solid var(--accent-alt); /* aqua border */
-  padding: 3px;
-  background: radial-gradient(circle at 30% 0%, #ffe99a, #2fd1b4 60%, #021420 100%);
-  box-shadow:
-    0 0 14px rgba(47, 209, 180, 0.5),
-    0 10px 20px rgba(0, 0, 0, 0.7);
-  object-fit: contain;
-}
-
 
 body {
   font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
@@ -52,8 +38,6 @@ body {
   color: var(--text-main);
   line-height: 1.6;
 }
-
-/* LAYOUT */
 
 img {
   max-width: 100%;
@@ -86,7 +70,7 @@ section {
 
 .section-title {
   font-family: "Montserrat", system-ui, sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   margin: 0 0 0.6rem;
 }
 
@@ -105,7 +89,11 @@ section {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: linear-gradient(to bottom, rgba(2, 20, 32, 0.98), rgba(2, 20, 32, 0.9));
+  background: linear-gradient(
+    to bottom,
+    rgba(2, 20, 32, 0.98),
+    rgba(2, 20, 32, 0.9)
+  );
   border-bottom: 1px solid #063047;
   backdrop-filter: blur(6px);
 }
@@ -125,21 +113,17 @@ section {
   text-decoration: none;
 }
 
-.logo-mark {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background:
-    radial-gradient(circle at 25% 0%, #ffffff, #ffd75a 38%, #0a7f9b 70%, #021420 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Montserrat", system-ui, sans-serif;
-  font-weight: 700;
-  color: #021420;
+.logo-img {
+  height: 44px;
+  width: auto;
+  border-radius: 12px;
+  border: 2px solid var(--accent-alt);
+  padding: 3px;
+  background: radial-gradient(circle at 30% 0%, #ffe99a, #2fd1b4 60%, #021420 100%);
   box-shadow:
-    0 0 18px rgba(255, 215, 90, 0.9),
-    0 18px 35px rgba(0, 0, 0, 0.9);
+    0 0 14px rgba(47, 209, 180, 0.5),
+    0 10px 20px rgba(0, 0, 0, 0.7);
+  object-fit: contain;
 }
 
 .logo-text {
@@ -150,12 +134,12 @@ section {
 .logo-main {
   font-family: "Montserrat", system-ui, sans-serif;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: #ffffff;
 }
 
 .logo-sub {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
 }
 
@@ -165,7 +149,6 @@ section {
   gap: 1.3rem;
   font-size: 0.9rem;
   margin-left: auto;
-  margin-right: 1rem;
 }
 
 .nav-links a {
@@ -192,10 +175,6 @@ section {
 .nav-links a:hover::after,
 .nav-links a:focus-visible::after {
   transform: scaleX(1);
-}
-
-.nav-cta {
-  font-size: 0.85rem;
 }
 
 /* Burger */
@@ -295,4 +274,14 @@ section {
   background: #ffe99a;
   transform: translateY(-1px);
   box-shadow:
-    0 0 26px rgba(255, 2
+    0 0 26px rgba(255, 233, 154, 0.9),
+    0 14px 30px rgba(0, 0, 0, 0.95);
+}
+
+.btn-outline {
+  border-color: var(--accent);
+  color: var(--accent-soft);
+  background: transparent;
+}
+
+.btn-outline:hover {
