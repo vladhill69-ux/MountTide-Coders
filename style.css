@@ -1,7 +1,6 @@
 /* ============================
    MOUNT TIDE CODERS THEME
    ============================ */
-
 :root {
   --bg: #021420;
   --bg-alt: #052132;
@@ -14,54 +13,31 @@
 }
 
 /* RESET */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans", system-ui, sans-serif;
-  color: var(--text-main);
-  line-height: 1.6;
-  position: relative;
-  overflow-x: hidden;
-
-  /* 🔥 MAIN FULL-SITE BACKGROUND IMAGE */
-  background:
-    url("assets/imgs/mountviewbackground.webp") center 0 / cover no-repeat fixed;
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling globally */
 }
-.hero-media img {
-  display: none;
-}
-
-  background:
-    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.06) 0, transparent 55%),
-    radial-gradient(circle at 80% 10%, rgba(47, 209, 180, 0.09) 0, transparent 60%),
-    radial-gradient(circle at 50% 120%, rgba(0, 100, 180, 0.15) 0, transparent 75%);
-
-  mix-blend-mode: screen;
-  opacity: 0.22;
-}
-
 
 body {
-  position: relative;
   margin: 0;
   font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   background:
+    /* Coastal gradient base */
     radial-gradient(circle at 0% 0%, #32c7ff 0, #0a527a 28%, transparent 55%),
     radial-gradient(circle at 100% 0%, #68f5b2 0, #06384f 32%, transparent 60%),
     linear-gradient(to bottom, #021420 0, #010b12 55%, #00060b 100%);
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
 }
+
 /* Big Mount watermark + soft coastal glow */
 body::before {
   content: "";
@@ -69,11 +45,9 @@ body::before {
   inset: -40px;
   z-index: -1;
   pointer-events: none;
-
   background:
     /* BIG MOUNT IMAGE */
     url("assets/imgs/mountviewbackground.webp") center 140px / 820px no-repeat,
-
     /* COASTAL GLOW LAYERS */
     radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.06) 0, transparent 55%),
     radial-gradient(circle at 80% 10%, rgba(47, 209, 180, 0.12) 0, transparent 60%),
@@ -84,12 +58,10 @@ body::before {
       transparent 1px,
       transparent 3px
     );
-
-  opacity: 0.18;              /* strength of effect */
-  mix-blend-mode: screen;     /* blends into the blue background */
+  opacity: 0.18; /* strength of effect */
+  mix-blend-mode: screen; /* blends into the blue background */
   filter: blur(1px) contrast(112%);
 }
-
 
 img {
   max-width: 100%;
@@ -106,6 +78,14 @@ img {
 section {
   padding: 4.5rem 0;
   border-bottom: 1px solid #041824;
+  opacity: 0; /* For JS fade-in */
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section-header {
@@ -136,7 +116,6 @@ section {
 /* =====================
    HEADER / NAV
    ===================== */
-
 .site-header {
   position: sticky;
   top: 0;
@@ -165,49 +144,18 @@ section {
   text-decoration: none;
 }
 
-/* 🌟 Big glowing badge-style logo */
 .logo-img {
-  height: 72px;                 /* bigger logo */
+  height: 44px;
   width: auto;
-  border-radius: 90px;
+  border-radius: 12px;
   border: 2px solid var(--accent-alt);
-  padding: 4px;
+  padding: 3px;
   background: radial-gradient(circle at 30% 0%, #ffe99a, #2fd1b4 60%, #021420 100%);
   box-shadow:
-    0 0 22px rgba(47, 209, 180, 0.7),
-    0 14px 32px rgba(0, 0, 0, 0.85);
+    0 0 14px rgba(47, 209, 180, 0.5),
+    0 10px 20px rgba(0, 0, 0, 0.7);
   object-fit: contain;
-
-  animation: tideGlow 4s ease-in-out infinite;
-  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
 }
-
-@keyframes tideGlow {
-  0% {
-    transform: translateY(0) scale(1);
-    box-shadow:
-      0 0 18px rgba(47, 209, 180, 0.55),
-      0 12px 26px rgba(0, 0, 0, 0.8);
-  }
-  50% {
-    transform: translateY(-2px) scale(1.04);
-    box-shadow:
-      0 0 30px rgba(47, 209, 180, 0.9),
-      0 18px 40px rgba(0, 0, 0, 0.95);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    box-shadow:
-      0 0 18px rgba(47, 209, 180, 0.55),
-      0 12px 26px rgba(0, 0, 0, 0.8);
-  }
-}
-
-/* a little extra lift on hover */
-.logo:hover .logo-img {
-  transform: translateY(-3px) scale(1.06);
-}
-
 
 .logo-text {
   display: flex;
@@ -239,6 +187,12 @@ section {
   text-decoration: none;
   padding-bottom: 0.1rem;
   position: relative;
+  transition: color 0.18s ease-out;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--accent-soft);
 }
 
 .nav-links a::after {
@@ -261,7 +215,6 @@ section {
 }
 
 /* Burger */
-
 .burger {
   display: none;
   background: none;
@@ -328,7 +281,6 @@ section {
 /* =========
    BUTTONS
    ========= */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -375,7 +327,6 @@ section {
 /* =====
    HERO
    ===== */
-
 .hero {
   padding: 4.5rem 0 4.2rem;
 }
@@ -447,7 +398,6 @@ section {
 }
 
 /* SERVICES CARDS */
-
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -460,6 +410,12 @@ section {
   padding: 1.4rem 1.5rem 1.5rem;
   border: 1px solid var(--border-subtle);
   box-shadow: 0 16px 32px rgba(1, 6, 13, 0.9);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(1, 6, 13, 1);
 }
 
 .card h3 {
@@ -509,7 +465,6 @@ section {
 }
 
 /* PORTFOLIO */
-
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -525,6 +480,11 @@ section {
   grid-template-columns: 120px minmax(0, 1fr);
   gap: 0.9rem;
   align-items: center;
+  transition: transform 0.2s ease-out;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-2px);
 }
 
 .portfolio-thumb {
@@ -570,9 +530,11 @@ section {
   color: var(--accent-soft);
   text-decoration: none;
   justify-self: flex-end;
+  transition: color 0.18s ease-out;
 }
 
 .portfolio-link:hover {
+  color: var(--accent);
   text-decoration: underline;
 }
 
@@ -582,7 +544,6 @@ section {
 }
 
 /* ABOUT */
-
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr);
@@ -634,8 +595,7 @@ section {
   color: var(--accent-alt);
 }
 
-/* CONTACT BOX */
-
+/* CONTACT BOX & FORM */
 .contact-box {
   background: var(--bg-alt);
   border-radius: 1.2rem;
@@ -657,6 +617,44 @@ section {
   color: var(--text-muted);
 }
 
+.contact-form {
+  margin: 1.5rem 0;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.form-group:last-child {
+  grid-template-columns: 1fr;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: var(--bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.18s ease-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-muted);
+}
+
 .contact-box-details p {
   margin: 0.1rem 0;
   font-size: 0.92rem;
@@ -665,6 +663,7 @@ section {
 .contact-box-details a {
   color: #ffffff;
   text-decoration: none;
+  transition: color 0.18s ease-out;
 }
 
 .contact-box-details a:hover {
@@ -679,7 +678,6 @@ section {
 }
 
 /* FOOTER */
-
 footer {
   padding: 2.1rem 0 2.5rem;
   background: #010b12;
@@ -723,6 +721,7 @@ footer {
 .footer-links a {
   color: var(--text-muted);
   text-decoration: none;
+  transition: color 0.18s ease-out;
 }
 
 .footer-links a:hover {
@@ -736,7 +735,6 @@ footer {
 }
 
 /* CALL BUTTON */
-
 .call-now-btn {
   position: fixed;
   bottom: 1.4rem;
@@ -754,6 +752,7 @@ footer {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
   border: none;
   transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+  z-index: 30;
 }
 
 .call-now-btn:hover {
@@ -761,26 +760,31 @@ footer {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 1);
 }
 
+/* Mobile CTA in menu */
+.mobile-cta {
+  margin-top: 0.4rem;
+  align-self: flex-start;
+}
+
 /* =================
    RESPONSIVE
    ================= */
-
 @media (max-width: 960px) {
   .hero-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 2.4rem;
   }
-
   .hero-media {
     order: -1;
   }
-
   .nav-links {
     display: none;
   }
-
   .burger {
     display: block;
+  }
+  .form-group {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -788,16 +792,17 @@ footer {
   section {
     padding: 3.4rem 0;
   }
-
   .hero-title {
     font-size: 2.1rem;
   }
-
   .call-now-btn {
     bottom: 1rem;
     right: 1rem;
     width: 48px;
     height: 48px;
     font-size: 1.2rem;
+  }
+  .contact-box-actions {
+    flex-direction: column;
   }
 }
