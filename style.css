@@ -35,6 +35,22 @@ body {
   background:
     url("assets/imgs/mountviewbackground.webp") center 0 / cover no-repeat fixed;
 }
+/* soft glow overlay similar to Smoke Spot's ash effect */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.06) 0, transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(47, 209, 180, 0.09) 0, transparent 60%),
+    radial-gradient(circle at 50% 120%, rgba(0, 100, 180, 0.15) 0, transparent 75%);
+
+  mix-blend-mode: screen;
+  opacity: 0.22;
+}
 
 
 body {
