@@ -344,6 +344,9 @@ section {
   gap: 2.4rem;
   align-items: center;
 }
+.hero-media {
+  display: none;
+}
 
 
 .hero-kicker {
