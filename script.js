@@ -37,7 +37,8 @@ if (contactForm && contactResult) {
       return;
     }
 
-    contactResult.textContent = "Thanks! This form is a demo – please email hello@hillwebstudio.co.nz and I'll reply personally.";
+    contactResult.textContent =
+      "Thanks! This form is a demo – please email hello@mounttidecoders.co.nz and I'll reply personally.";
     contactForm.reset();
   });
 }
@@ -47,4 +48,3 @@ const yearSpan = document.getElementById("year");
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
-
