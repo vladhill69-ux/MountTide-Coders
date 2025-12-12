@@ -169,7 +169,7 @@ section {
 .logo-img {
   height: 72px;                 /* bigger logo */
   width: auto;
-  border-radius: 18px;
+  border-radius: 90px;
   border: 2px solid var(--accent-alt);
   padding: 4px;
   background: radial-gradient(circle at 30% 0%, #ffe99a, #2fd1b4 60%, #021420 100%);
