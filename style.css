@@ -142,18 +142,29 @@ section.visible {
   text-decoration: none;
 }
 
+/* Bigger, glowy navbar logo */
 .logo-img {
-  height: 60px; /* Increased from 44px for a bolder presence */
+  height: 80px;        /* 🔺 main size bump */
   width: auto;
-  border-radius: 12px;
+  flex-shrink: 0;
+
+  border-radius: 16px;
   border: 2px solid var(--accent-alt);
-  padding: 3px;
+  padding: 4px;
   background: radial-gradient(circle at 30% 0%, #ffe99a, #2fd1b4 60%, #021420 100%);
   box-shadow:
-    0 0 14px rgba(47, 209, 180, 0.5),
-    0 10px 20px rgba(0, 0, 0, 0.7);
+    0 0 22px rgba(47, 209, 180, 0.75),
+    0 14px 30px rgba(0, 0, 0, 0.9);
   object-fit: contain;
 }
+
+/* Slightly smaller on phones so it doesn't dominate */
+@media (max-width: 720px) {
+  .logo-img {
+    height: 64px;
+  }
+}
+
 
 .logo-text {
   display: flex;
