@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Mount Tide Coders | Web Design • Mount Maunganui</title>
-
   <meta
     name="description"
     content="Mount Tide Coders builds bright, clean, mobile-first websites for small businesses, tradies and local brands in Tauranga and Mount Maunganui."
   />
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +15,6 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
-
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
@@ -29,22 +25,21 @@
         <a href="#top" class="logo" aria-label="Mount Tide Coders home">
           <img
             src="assets/imgs/logo.jpg"
-            alt="Mount Tide Coders logo"
+            alt="Mount Tide Coders logo – freelance web design in Mount Maunganui"
             class="logo-img"
+            loading="lazy"
           />
           <div class="logo-text">
             <span class="logo-main">Mount Tide Coders</span>
             <span class="logo-sub">Web Design • Mount Maunganui</span>
           </div>
         </a>
-
         <div class="nav-links" role="menubar">
           <a href="#services" role="menuitem">Services</a>
           <a href="#work" role="menuitem">Portfolio</a>
           <a href="#about" role="menuitem">About</a>
           <a href="#contact" role="menuitem">Contact</a>
         </div>
-
         <button
           class="burger"
           id="burgerButton"
@@ -55,23 +50,15 @@
           <div class="burger-lines"></div>
         </button>
       </nav>
-
       <div class="mobile-menu" id="mobileMenu">
         <a href="#services">Services</a>
         <a href="#work">Portfolio</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a
-          href="#contact"
-          class="btn btn-primary"
-          style="margin-top: 0.4rem; align-self: flex-start;"
-        >
-          Book a site
-        </a>
+        <a href="#contact" class="btn btn-primary mobile-cta">Book a site</a>
       </div>
     </div>
   </header>
-
   <main>
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-heading">
@@ -83,18 +70,15 @@
             Bright, clean websites<br />
             <span class="hero-highlight">that actually feel like your brand.</span>
           </h1>
-
           <p class="hero-subtitle">
             I design and build fast, mobile-first websites for small businesses,
             tradies, food spots and local brands. No bloated templates, no confusing
             tech – just a site that looks sharp and brings you more enquiries.
           </p>
-
           <div class="hero-cta">
             <a href="#contact" class="btn btn-primary">Let’s plan your site</a>
             <a href="#work" class="btn btn-outline">See recent builds</a>
           </div>
-
           <div class="hero-meta" aria-label="Quick facts">
             <div class="hero-meta-item">
               <div class="hero-meta-dot"></div>
@@ -110,9 +94,16 @@
             </div>
           </div>
         </div>
-
-        
-
+        <!-- RIGHT -->
+        <div class="hero-media">
+          <img
+            src="assets/imgs/mountviewbackground.webp"
+            alt="Mount Maunganui coastal view illustration used by Mount Tide Coders"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
     <!-- SERVICES -->
     <section id="services" aria-labelledby="services-heading">
       <div class="container">
@@ -126,7 +117,6 @@
             fit your budget and goals.
           </p>
         </div>
-
         <div class="cards-grid">
           <article class="card">
             <h3>One-Page Starter Site</h3>
@@ -141,7 +131,6 @@
               <span class="card-price">From $650</span>
             </div>
           </article>
-
           <article class="card">
             <h3>Full Business Website</h3>
             <p>For growing businesses that need multiple pages, services and case studies.</p>
@@ -155,7 +144,6 @@
               <span class="card-price">From $1,500</span>
             </div>
           </article>
-
           <article class="card">
             <h3>Redesign &amp; Cleanup</h3>
             <p>Your current site feels old or messy? I’ll rebuild it simple, modern and easy to read.</p>
@@ -172,7 +160,6 @@
         </div>
       </div>
     </section>
-
     <!-- PORTFOLIO -->
     <section id="work" aria-labelledby="work-heading">
       <div class="container">
@@ -183,7 +170,6 @@
             A mix of live client projects and concept designs. As I build more sites, I’ll keep this section updated.
           </p>
         </div>
-
         <div class="portfolio-grid">
           <article class="portfolio-card">
             <div class="portfolio-thumb thumb-smokespot"></div>
@@ -200,7 +186,6 @@
               View site ↗
             </a>
           </article>
-
           <article class="portfolio-card">
             <div class="portfolio-thumb thumb-topstop"></div>
             <div class="portfolio-content">
@@ -216,7 +201,6 @@
               View site ↗
             </a>
           </article>
-
           <article class="portfolio-card">
             <div class="portfolio-thumb thumb-placeholder"></div>
             <div class="portfolio-content">
@@ -229,7 +213,6 @@
         </div>
       </div>
     </section>
-
     <!-- ABOUT -->
     <section id="about" aria-labelledby="about-heading">
       <div class="container about-grid">
@@ -244,7 +227,6 @@
               Mount / beach personality.
             </p>
           </div>
-
           <div class="about-merged-card">
             <div class="about-merged-col">
               <h3>What I focus on</h3>
@@ -258,7 +240,6 @@
                 <li>Based in Tauranga, working with clients anywhere.</li>
               </ul>
             </div>
-
             <div class="about-merged-col">
               <h3>Good fit if you:</h3>
               <ul class="about-list">
@@ -272,9 +253,8 @@
         </div>
       </div>
     </section>
-
     <!-- CONTACT / QUICK BOX -->
-    <section id="contact" aria-label="Quick contact details">
+    <section id="contact" aria-label="Contact details and form">
       <div class="container">
         <div class="contact-box">
           <h2>Ready to talk about your website?</h2>
@@ -282,12 +262,23 @@
             Flick me a message or give me a call to chat about your business, ideas and
             what a good website could do for you.
           </p>
-
+          <!-- Simple Contact Form (integrate with Netlify Forms: add netlify to form tag) -->
+          <form class="contact-form" netlify action="/submit" method="POST">
+            <input type="hidden" name="form-name" value="contact" />
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your name" required aria-label="Your name" />
+              <input type="email" name="email" placeholder="Your email" required aria-label="Your email" />
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Tell me about your project..." rows="4" required aria-label="Your message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send message</button>
+          </form>
           <div class="contact-box-details">
+            <p><strong>Or call/email directly:</strong></p>
             <p><strong>Phone:</strong> <a href="tel:02040651315">020 4065 1315</a></p>
             <p><strong>Email:</strong> <a href="mailto:hello@mounttidecoders.co.nz">hello@mounttidecoders.co.nz</a></p>
           </div>
-
           <div class="contact-box-actions">
             <a href="tel:02040651315" class="btn btn-primary">Call Now</a>
             <a href="mailto:hello@mounttidecoders.co.nz" class="btn btn-outline">Email Vlad</a>
@@ -296,7 +287,6 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="container">
       <div class="footer-top">
@@ -305,6 +295,7 @@
             src="assets/imgs/logo.jpg"
             alt="Mount Tide Coders logo"
             class="footer-logo"
+            loading="lazy"
           />
           <p>Mount Tide Coders</p>
         </div>
@@ -315,13 +306,11 @@
           <a href="#contact">Contact</a>
         </div>
       </div>
-
       <div class="footer-bottom">
         <span>© <span id="year"></span> Mount Tide Coders. All rights reserved.</span>
       </div>
     </div>
   </footer>
-
   <!-- floating call button -->
   <a href="tel:02040651315" class="call-now-btn" aria-label="Call Mount Tide Coders">
     📞
