@@ -41,6 +41,33 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
+/* Big Mount watermark + soft coastal glow */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -40px;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    /* BIG MOUNT IMAGE */
+    url("assets/imgs/mountviewbackground.webp") center 140px / 820px no-repeat,
+
+    /* COASTAL GLOW LAYERS */
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.06) 0, transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(47, 209, 180, 0.12) 0, transparent 60%),
+    repeating-linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+
+  opacity: 0.18;              /* strength of effect */
+  mix-blend-mode: screen;     /* blends into the blue background */
+  filter: blur(1px) contrast(112%);
+}
 
 
 img {
