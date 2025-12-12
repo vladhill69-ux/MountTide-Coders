@@ -191,12 +191,13 @@ section {
   text-decoration: none;
   padding-bottom: 0.1rem;
   position: relative;
-  transition: color 0.18s ease-out;
+  transition: color 0.18s ease-out, transform 0.2s ease-out;
 }
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
   color: var(--accent-soft);
+  animation: navBounce 0.45s ease-out;
 }
 
 .nav-links a::after {
