@@ -162,18 +162,49 @@ section {
   text-decoration: none;
 }
 
+/* 🌟 Big glowing badge-style logo */
 .logo-img {
-  height: 44px;
+  height: 72px;                 /* bigger logo */
   width: auto;
-  border-radius: 12px;
+  border-radius: 18px;
   border: 2px solid var(--accent-alt);
-  padding: 3px;
+  padding: 4px;
   background: radial-gradient(circle at 30% 0%, #ffe99a, #2fd1b4 60%, #021420 100%);
   box-shadow:
-    0 0 14px rgba(47, 209, 180, 0.5),
-    0 10px 20px rgba(0, 0, 0, 0.7);
+    0 0 22px rgba(47, 209, 180, 0.7),
+    0 14px 32px rgba(0, 0, 0, 0.85);
   object-fit: contain;
+
+  animation: tideGlow 4s ease-in-out infinite;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
 }
+
+@keyframes tideGlow {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow:
+      0 0 18px rgba(47, 209, 180, 0.55),
+      0 12px 26px rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow:
+      0 0 30px rgba(47, 209, 180, 0.9),
+      0 18px 40px rgba(0, 0, 0, 0.95);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow:
+      0 0 18px rgba(47, 209, 180, 0.55),
+      0 12px 26px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* a little extra lift on hover */
+.logo:hover .logo-img {
+  transform: translateY(-3px) scale(1.06);
+}
+
 
 .logo-text {
   display: flex;
