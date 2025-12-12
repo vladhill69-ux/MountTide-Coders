@@ -29,14 +29,18 @@ body {
   scroll-behavior: smooth;
 }
 .logo-img {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  object-fit: cover;
+  height: 44px;          /* controls size – change if you want smaller/bigger */
+  width: auto;
+  border-radius: 12px;   /* soft rounded corners */
+  border: 2px solid var(--accent-alt); /* aqua border */
+  padding: 3px;
+  background: radial-gradient(circle at 30% 0%, #ffe99a, #2fd1b4 60%, #021420 100%);
   box-shadow:
-    0 0 18px rgba(0,0,0,0.4),
-    0 8px 20px rgba(0,0,0,0.6);
+    0 0 14px rgba(47, 209, 180, 0.5),
+    0 10px 20px rgba(0, 0, 0, 0.7);
+  object-fit: contain;
 }
+
 
 body {
   font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
