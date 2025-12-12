@@ -139,7 +139,7 @@ section {
 /* Bigger, glowy navbar logo */
 
 .logo-img {
-  height: 100px;          /* bigger */
+  height: 110px;          /* bigger */
   width: auto;
   flex-shrink: 0;
 animation: logoPulse 3.2s ease-in-out infinite;
