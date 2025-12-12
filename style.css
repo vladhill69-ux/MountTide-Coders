@@ -841,4 +841,9 @@ footer {
   .contact-box-actions {
     flex-direction: column;
   }
+   /* Force-remove hero image */
+.hero-media img {
+  display: none !important;
+}
+
 }
