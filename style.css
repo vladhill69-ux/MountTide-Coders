@@ -145,7 +145,7 @@ section.visible {
 }
 
 .logo-img {
-  height: 44px;
+  height: 60px; /* Increased from 44px for a bolder presence */
   width: auto;
   border-radius: 12px;
   border: 2px solid var(--accent-alt);
