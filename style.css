@@ -865,6 +865,20 @@ footer {
   .logo-img {
     height: 75px;   /* still big but not overwhelming */
   }
+      /* Force the left hero button to be outline style */
+.hero-cta .btn-primary {
+  background: transparent !important;
+  color: var(--accent-soft) !important;
+  border: 2px solid var(--accent) !important;
+  box-shadow: none !important;
+}
+
+.hero-cta .btn-primary:hover {
+  background: var(--accent) !important;
+  color: #021420 !important;
+  box-shadow: 0 0 22px rgba(255, 215, 90, 0.7) !important;
+}
+
 }
 
 
