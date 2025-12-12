@@ -142,7 +142,7 @@ section {
   height: 100px;          /* bigger */
   width: auto;
   flex-shrink: 0;
-
+animation: logoPulse 3.2s ease-in-out infinite;
   border-radius: 16px;
   border: 2px solid var(--accent-alt);
   padding: 4px;
