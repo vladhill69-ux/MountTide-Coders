@@ -139,10 +139,10 @@ section {
 /* Bigger, glowy navbar logo */
 
 .logo-img {
-  height: 110px;          /* bigger */
+  height: 100px;
   width: auto;
   flex-shrink: 0;
-animation: logoPulse 3.2s ease-in-out infinite;
+
   border-radius: 16px;
   border: 2px solid var(--accent-alt);
   padding: 4px;
@@ -150,6 +150,10 @@ animation: logoPulse 3.2s ease-in-out infinite;
   box-shadow:
     0 0 22px rgba(47, 209, 180, 0.75),
     0 14px 30px rgba(0, 0, 0, 0.9);
+
+  /* 💓 pulse animation */
+  animation: logo-pulse 2.4s ease-in-out infinite;
+  transform-origin: center;
 }
 
 
