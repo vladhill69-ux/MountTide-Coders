@@ -1,6 +1,7 @@
 /* ============================
    MOUNT TIDE CODERS THEME
    ============================ */
+
 :root {
   --bg: #021420;
   --bg-alt: #052132;
@@ -13,6 +14,7 @@
 }
 
 /* RESET */
+
 *,
 *::before,
 *::after {
@@ -20,8 +22,17 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Enables smooth scrolling globally */
+  scroll-behavior: smooth;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================
+   GLOBAL LAYOUT / BACKGROUND
+   ============================ */
 
 body {
   margin: 0;
@@ -34,12 +45,10 @@ body {
 
   /* 🌊 MAIN BACKGROUND – Mount photo + subtle dark overlay */
   background:
-    linear-gradient(to bottom, rgba(2, 20, 32, 0.45), rgba(1, 11, 18, 0.9)),
+    linear-gradient(to bottom, rgba(2, 20, 32, 0.55), rgba(1, 11, 18, 0.95)),
     url("assets/imgs/mountviewbackground.webp") center top / cover no-repeat fixed;
 }
 
-
-/* Big Mount watermark + soft coastal glow */
 /* Soft coastal glow on top of the photo */
 body::before {
   content: "";
@@ -56,15 +65,7 @@ body::before {
   opacity: 0.4;
 }
 
-  opacity: 0.18; /* strength of effect */
-  mix-blend-mode: screen; /* blends into the blue background */
-  filter: blur(1px) contrast(112%);
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
+/* LAYOUT WRAPPER */
 
 .container {
   width: 100%;
@@ -76,14 +77,6 @@ img {
 section {
   padding: 4.5rem 0;
   border-bottom: 1px solid #041824;
-  opacity: 0; /* For JS fade-in */
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .section-header {
@@ -114,6 +107,7 @@ section.visible {
 /* =====================
    HEADER / NAV
    ===================== */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -143,8 +137,9 @@ section.visible {
 }
 
 /* Bigger, glowy navbar logo */
+
 .logo-img {
-  height: 80px;        /* 🔺 main size bump */
+  height: 80px; /* main logo size */
   width: auto;
   flex-shrink: 0;
 
@@ -157,14 +152,6 @@ section.visible {
     0 14px 30px rgba(0, 0, 0, 0.9);
   object-fit: contain;
 }
-
-/* Slightly smaller on phones so it doesn't dominate */
-@media (max-width: 720px) {
-  .logo-img {
-    height: 64px;
-  }
-}
-
 
 .logo-text {
   display: flex;
@@ -224,6 +211,7 @@ section.visible {
 }
 
 /* Burger */
+
 .burger {
   display: none;
   background: none;
@@ -287,9 +275,16 @@ section.visible {
   font-size: 0.9rem;
 }
 
+/* Mobile CTA in menu */
+.mobile-cta {
+  margin-top: 0.4rem;
+  align-self: flex-start;
+}
+
 /* =========
    BUTTONS
    ========= */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -336,6 +331,7 @@ section.visible {
 /* =====
    HERO
    ===== */
+
 .hero {
   padding: 4.5rem 0 4.2rem;
 }
@@ -400,13 +396,23 @@ section.visible {
   background: var(--accent-alt);
 }
 
+/* Hero image card */
+
 .hero-media img {
+  width: 100%;
+  max-width: 520px;
+  max-height: 380px;
+  object-fit: cover;
   border-radius: 1.2rem;
   border: 1px solid var(--border-subtle);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+  margin-left: auto;
 }
 
-/* SERVICES CARDS */
+/* =========================
+   SERVICES CARDS
+   ========================= */
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -473,7 +479,10 @@ section.visible {
   font-weight: 600;
 }
 
-/* PORTFOLIO */
+/* =========================
+   PORTFOLIO
+   ========================= */
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -552,7 +561,10 @@ section.visible {
   cursor: default;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+   ========================= */
+
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr);
@@ -604,7 +616,10 @@ section.visible {
   color: var(--accent-alt);
 }
 
-/* CONTACT BOX & FORM */
+/* =========================
+   CONTACT BOX & FORM
+   ========================= */
+
 .contact-box {
   background: var(--bg-alt);
   border-radius: 1.2rem;
@@ -686,7 +701,10 @@ section.visible {
   gap: 0.7rem;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+   ========================= */
+
 footer {
   padding: 2.1rem 0 2.5rem;
   background: #010b12;
@@ -743,7 +761,10 @@ footer {
   color: var(--text-muted);
 }
 
-/* CALL BUTTON */
+/* =========================
+   CALL BUTTON
+   ========================= */
+
 .call-now-btn {
   position: fixed;
   bottom: 1.4rem;
@@ -769,29 +790,28 @@ footer {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 1);
 }
 
-/* Mobile CTA in menu */
-.mobile-cta {
-  margin-top: 0.4rem;
-  align-self: flex-start;
-}
-
 /* =================
    RESPONSIVE
    ================= */
+
 @media (max-width: 960px) {
   .hero-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 2.4rem;
   }
+
   .hero-media {
     order: -1;
   }
+
   .nav-links {
     display: none;
   }
+
   .burger {
     display: block;
   }
+
   .form-group {
     grid-template-columns: 1fr;
   }
@@ -801,9 +821,15 @@ footer {
   section {
     padding: 3.4rem 0;
   }
+
   .hero-title {
     font-size: 2.1rem;
   }
+
+  .logo-img {
+    height: 64px; /* slightly smaller on phones */
+  }
+
   .call-now-btn {
     bottom: 1rem;
     right: 1rem;
@@ -811,6 +837,7 @@ footer {
     height: 48px;
     font-size: 1.2rem;
   }
+
   .contact-box-actions {
     flex-direction: column;
   }
