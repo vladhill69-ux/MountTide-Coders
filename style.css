@@ -889,5 +889,9 @@ footer {
   width: 100%;
   height: 90px;
 }
+footer .container {
+  padding: 2.1rem 1.25rem 2.5rem;  /* keeps your footer spacing */
+  background: #010b12;             /* footer block stays dark */
+}
 
 }
