@@ -8,6 +8,7 @@
     name="description"
     content="Mount Tide Coders builds bright, clean, mobile-first websites for small businesses, tradies and local brands in Tauranga and Mount Maunganui."
   />
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,196 +16,208 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
+
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
+
 <body id="top">
-  <header class="site-header">
-    <div class="container">
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#top" class="logo" aria-label="Mount Tide Coders home">
-          <img
-            src="assets/imgs/logo.jpg"
-            alt="Mount Tide Coders logo – freelance web design in Mount Maunganui"
-            class="logo-img"
-            loading="lazy"
-          />
-          <div class="logo-text">
-            <span class="logo-main">Mount Tide Coders</span>
-            <span class="logo-sub">Web Design • Mount Maunganui</span>
-          </div>
-        </a>
-        <div class="nav-links" role="menubar">
-          <a href="#about" role="menuitem">About</a>
-          <a href="#contact" role="menuitem">Contact</a>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+
+      <a href="#top" class="logo" aria-label="Mount Tide Coders home">
+        <img
+          src="assets/imgs/logo.jpg"
+          alt="Mount Tide Coders logo – freelance web design in Mount Maunganui"
+          class="logo-img"
+          loading="lazy"
+        />
+        <div class="logo-text">
+          <span class="logo-main">Mount Tide Coders</span>
+          <span class="logo-sub">Web Design • Mount Maunganui</span>
         </div>
-        <button
-          class="burger"
-          id="burgerButton"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
-          aria-controls="mobileMenu"
-        >
-          <div class="burger-lines"></div>
-        </button>
-      </nav>
-      <div class="mobile-menu" id="mobileMenu">
+      </a>
+
+      <div class="nav-links">
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+      </div>
+
+      <button
+        class="burger"
+        id="burgerButton"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <div class="burger-lines"></div>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-outline">Let’s plan your site</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container hero-grid">
+
+    <div>
+      <p class="hero-kicker">Freelance web designer • Tauranga / Mount</p>
+
+      <h1 id="hero-heading" class="hero-title">
+        Bright, clean websites<br />
+        <span class="hero-highlight">that actually feel like your brand.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        I design and build fast, clean websites for small businesses, tradies and
+        local brands around Tauranga and the Mount. No bloated templates, no confusing
+        tech — just a site that looks sharp and brings you more enquiries.
+      </p>
+
+      <div class="hero-cta">
         <a href="#contact" class="btn btn-outline">Let’s plan your site</a>
       </div>
+
+      <div class="hero-meta" aria-label="Quick facts">
+        <div class="hero-meta-item">
+          <div class="hero-meta-dot"></div>
+          <span>Custom coded (HTML, CSS, JS) – not page builders</span>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-dot"></div>
+          <span>Optimised for mobile, speed and clarity</span>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-dot"></div>
+          <span>Built for Tauranga & Mount Maunganui businesses</span>
+        </div>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="container hero-grid">
-        <!-- LEFT -->
-        <div>
-          <p class="hero-kicker">Freelance web designer • Tauranga / Mount</p>
-          <h1 id="hero-heading" class="hero-title">
-            Bright, clean websites<br />
-            <span class="hero-highlight">that actually feel like your brand.</span>
-          </h1>
-          <p class="hero-subtitle">
-            I design and build fast, clean websites for small businesses, tradies and local brands around Tauranga and the Mount. 
-            No bloated templates, no confusing tech, just a site that looks sharp and brings you more enquiries.
-          </p>
+  </div>
+</section>
 
-          <div class="hero-cta">
-            <a href="#contact" class="btn btn-outline">Let’s plan your site</a>
-          </div>
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="container about-grid">
 
-          <div class="hero-meta" aria-label="Quick facts">
-            <div class="hero-meta-item">
-              <div class="hero-meta-dot"></div>
-              <span>Custom coded (HTML, CSS, JS) – not generic page builders</span>
-            </div>
-            <div class="hero-meta-item">
-              <div class="hero-meta-dot"></div>
-              <span>Optimised for mobile, speed and clarity</span>
-            </div>
-            <div class="hero-meta-item">
-              <div class="hero-meta-dot"></div>
-              <span>Perfect for Tauranga &amp; Mount Maunganui businesses</span>
-            </div>
-          </div>
-        </div>
-        <!-- RIGHT column removed on purpose -->
-      </div> <!-- /container hero-grid -->
-    </section>
-    <!-- END HERO -->
+    <div class="section-header">
+      <div class="section-kicker">About</div>
+      <h2 id="about-heading" class="section-title">
+        Hey from Mount Tide Coders – building sites from the Mount.
+      </h2>
+      <p class="section-subtitle">
+        At Mount Tide Coders, we turn ideas into high-performing websites that feel
+        local, clear and professional. No fluff — just tools that help your business
+        grow and get found online.
+      </p>
+    </div>
 
-    <!-- ABOUT -->
-    <section id="about" aria-labelledby="about-heading">
-      <div class="container about-grid">
-        <div>
-          <div class="section-header">
-            <div class="section-kicker">About</div>
-            <h2 id="about-heading" class="section-title">
-              Hey from Mount Tide Coders – building sites from the Mount.
-            </h2>
-            <p class="section-subtitle">
-              At Mount Tide Coders, we transform visions into vibrant, high-performing websites that captivate audiences and drive measurable success. Through innovative design, seamless functionality, and a client-first approach, we empower entrepreneurs, brands, and organizations to thrive in the digital landscape, delivering not just websites,
-              but powerful tools for growth, connection, and lasting impact.
-            </p>
-          </div>
-
-          <!-- PROOF SECTION -->
-          <section id="proof">
-            <div class="container">
-              <div class="section-header">
-                <div class="section-kicker">Why a website matters</div>
-                <h2 class="section-title">Real numbers behind “more customers online”</h2>
-                <p class="section-subtitle">
-                  These aren’t marketing slogans – they’re current stats showing how often people
-                  go online before they call, visit, or buy from a business.
-                </p>
-              </div>
-
-              <div class="cards-grid">
-                <!-- Card 1 -->
-                <article class="card">
-                  <h3>First impressions on a budget</h3>
-                  <p>
-                   "consumers see websites as the most important tool for engaging with businesses – nearly three-quarters of individuals
-                    said it was the most important tool, far more than said social media or email."
-                  </p>
-                  <p class="section-subtitle">
-                    This quote, drawn from InternetNZ's 2025 research on New Zealand consumers and businesses, highlights a significant disconnect in digital engagement strategies. It reveals that nearly 75% of consumers regard a business's website as the top channel for interaction—far outpacing preferences
-                    for social media (around 10-15% in the survey) or email (similarly low).
-                  </p>
-                  <a
-  class="btn btn-outline"
-  href="https://internetnz.nz/dotnz-research/2025-nz-consumers-and-businesses-research/"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Read the article ↗
-</a>
-
-                </article>
-              </div>
-            </div>
-          </section>
-          <!-- END PROOF -->
-
-          <div class="about-merged-card">
-            <div class="about-merged-col">
-              <h3>What I focus on</h3>
-              <p class="about-tagline">
-                Simple builds, clear layouts, and websites that don’t feel like overseas templates.
-              </p>
-              <ul class="about-list">
-                <li>Custom-coded layouts with clean structure.</li>
-                <li>Bright, coastal-inspired designs with strong contrast.</li>
-                <li>Explaining everything in plain language.</li>
-                <li>Based in Tauranga, working with clients anywhere.</li>
-              </ul>
-            </div>
-            <div class="about-merged-col">
-              <h3>Good fit if you:</h3>
-              <ul class="about-list">
-                <li>Want to look more professional online.</li>
-                <li>Need something mobile-friendly that loads fast.</li>
-                <li>Prefer direct contact with the person building your site.</li>
-                <li>Like clean, modern design with a relaxed vibe.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <!-- PROOF BLOCK (div, not nested section) -->
+    <div id="proof">
+      <div class="section-header">
+        <div class="section-kicker">Why a website matters</div>
+        <h2 class="section-title">Real numbers behind “more customers online”</h2>
+        <p class="section-subtitle">
+          These aren’t marketing slogans — they’re real New Zealand data showing how
+          people choose businesses today.
+        </p>
       </div>
-    </section>
 
-    <!-- CONTACT / QUICK BOX -->
-    <section id="contact" aria-label="Contact details and form">
-      <div class="container">
-        <div class="contact-box">
-          <h2>Ready to talk about your website?</h2>
+      <div class="cards-grid">
+        <article class="card">
+          <h3>NZ consumers expect a website</h3>
           <p>
-            Flick me a message or give me a call to chat about your business, ideas and
-            what a good website could do for you.
+            “Consumers see websites as the most important tool for engaging with
+            businesses — nearly three-quarters ranked websites above social media
+            and email.”
           </p>
-
-          <div class="contact-box-details">
-            <p><strong>Or call/email directly:</strong></p>
-            <p><strong>Phone:</strong> <a href="tel:0274396208">027 439 6208</a></p>
-            <p>
-              <strong>Email:</strong>
-              <a href="mailto:MountTideCoders@outlook.com">MountTideCoders@outlook.com</a>
-            </p>
-          </div>
-
-          <div class="contact-box-actions">
-            <a href="tel:0274396208" class="btn btn-outline">Call Now</a>
-            <a href="mailto:MountTideCoders@outlook.com" class="btn btn-outline">Email the team</a>
-          </div>
-        </div>
+          <p class="section-subtitle">
+            From InternetNZ’s research on how New Zealanders interact with businesses
+            online — showing why a clear, fast website matters more than social feeds.
+          </p>
+          <a
+            class="btn btn-outline"
+            href="https://internetnz.nz/dotnz-research/2025-nz-consumers-and-businesses-research/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the research ↗
+          </a>
+        </article>
       </div>
-    </section>
-  </main>
+    </div>
 
+    <div class="about-merged-card">
+      <div class="about-merged-col">
+        <h3>What I focus on</h3>
+        <p class="about-tagline">
+          Simple builds, clear layouts, and sites that don’t feel like overseas templates.
+        </p>
+        <ul class="about-list">
+          <li>Custom-coded layouts with clean structure</li>
+          <li>Bright, coastal-inspired design</li>
+          <li>Plain-English explanations</li>
+          <li>Based in Tauranga, working anywhere</li>
+        </ul>
+      </div>
+
+      <div class="about-merged-col">
+        <h3>Good fit if you:</h3>
+        <ul class="about-list">
+          <li>Want to look more professional online</li>
+          <li>Need something mobile-friendly and fast</li>
+          <li>Prefer direct contact with your developer</li>
+          <li>Like modern design with a relaxed vibe</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-label="Contact details">
+  <div class="container">
+    <div class="contact-box">
+
+      <h2>Ready to talk about your website?</h2>
+      <p>
+        Flick me a message or give me a call — happy to chat ideas and see if we’re a good fit.
+      </p>
+
+      <div class="contact-box-details">
+        <p><strong>Phone:</strong> <a href="tel:0274396208">027 439 6208</a></p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:MountTideCoders@outlook.com">MountTideCoders@outlook.com</a>
+        </p>
+      </div>
+
+      <div class="contact-box-actions">
+        <a href="tel:0274396208" class="btn btn-outline">Call Now</a>
+        <a href="mailto:MountTideCoders@outlook.com" class="btn btn-outline">Email the team</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
     <div class="footer-top">
@@ -228,11 +241,10 @@
     </div>
   </div>
 
-  <!-- 🌊 Breaky foam + splashes -->
+  <!-- 🌊 Foam -->
   <div class="wave-foam" aria-hidden="true">
     <span class="foam f1"></span><span class="foam f2"></span><span class="foam f3"></span>
     <span class="foam f4"></span><span class="foam f5"></span><span class="foam f6"></span>
-
     <span class="splash s1"></span><span class="splash s2"></span>
     <span class="splash s3"></span><span class="splash s4"></span>
   </div>
@@ -240,17 +252,16 @@
   <!-- 🌊 Wave -->
   <div class="wave-divider" aria-hidden="true">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path fill="#021420"
+      <path
+        fill="#021420"
         d="M0,64 C240,120 480,8 720,64 C960,120 1200,8 1440,64 L1440,120 L0,120 Z">
       </path>
     </svg>
   </div>
 </footer>
 
+<!-- Floating call button -->
+<a href="tel:0274396208" class="call-now-btn" aria-label="Call Mount Tide Coders">📞</a>
 
-  <!-- floating call button -->
-  <a href="tel:0274396208" class="call-now-btn" aria-label="Call Mount Tide Coders">
-    📞
-  </a>
 </body>
 </html>
