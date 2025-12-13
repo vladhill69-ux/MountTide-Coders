@@ -682,10 +682,11 @@ section {
    ========================= */
 
 footer {
-  padding: 2.1rem 0 2.5rem;
-  background: #010b12;
+  padding: 0;                 /* important */
+  background: transparent;    /* important */
   border-top: 1px solid #063047;
 }
+
 
 .footer-top {
   display: flex;
