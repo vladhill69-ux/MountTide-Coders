@@ -230,6 +230,7 @@
         />
         <p>Mount Tide Coders</p>
       </div>
+
       <div class="footer-links">
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -241,26 +242,19 @@
     </div>
   </div>
 
-  <!-- 🌊 Foam -->
-  <div class="wave-foam" aria-hidden="true">
-  <span class="foam b1"></span>
-  <span class="foam b2"></span>
-  <span class="foam b3"></span>
-  <span class="foam b4"></span>
-  <span class="foam b5"></span>
-  <span class="foam b6"></span>
-  <span class="foam b7"></span>
-  <span class="foam b8"></span>
-</div>
-
-
-  <!-- 🌊 Wave -->
+  <!-- 🌊 Wave + Foam (foam follows the exact crest line) -->
   <div class="wave-divider" aria-hidden="true">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <!-- FOAM crest line (same curve as the wave) -->
       <path
-        fill="#021420"
-        d="M0,64 C240,120 480,8 720,64 C960,120 1200,8 1440,64 L1440,120 L0,120 Z">
-      </path>
+        class="wave-foam-path"
+        d="M0,64 C240,120 480,8 720,64 C960,120 1200,8 1440,64"
+      />
+      <!-- Wave fill -->
+      <path
+        class="wave-fill"
+        d="M0,64 C240,120 480,8 720,64 C960,120 1200,8 1440,64 L1440,120 L0,120 Z"
+      />
     </svg>
   </div>
 </footer>
