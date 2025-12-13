@@ -20,7 +20,9 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 img {
   max-width: 100%;
@@ -28,21 +30,23 @@ img {
 }
 
 /* ============================
-   GLOBAL BACKGROUND
+   GLOBAL LAYOUT / BACKGROUND
    ============================ */
 
 body {
   margin: 0;
-  font-family: "Open Sans", system-ui, sans-serif;
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
 
-  background:
-    linear-gradient(to bottom, rgba(2,20,32,.55), rgba(1,11,18,.95)),
+  background: linear-gradient(to bottom, rgba(2, 20, 32, 0.55), rgba(1, 11, 18, 0.95)),
     url("assets/imgs/mountviewbackground.webp") center top / cover no-repeat fixed;
 }
 
+/* Soft coastal glow on top of the photo */
 body::before {
   content: "";
   position: fixed;
@@ -50,17 +54,18 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 10% 0%, rgba(255,255,255,.08), transparent 55%),
-    radial-gradient(circle at 90% 0%, rgba(47,209,180,.16), transparent 60%);
+    radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.08) 0, transparent 55%),
+    radial-gradient(circle at 90% 0%, rgba(47, 209, 180, 0.16) 0, transparent 60%);
   mix-blend-mode: screen;
-  opacity: .4;
+  opacity: 0.4;
 }
 
 /* ============================
-   LAYOUT
+   LAYOUT WRAPPER
    ============================ */
 
 .container {
+  width: 100%;
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 1.25rem;
@@ -71,23 +76,27 @@ section {
   border-bottom: 1px solid #041824;
 }
 
-.section-header { margin-bottom: 2.2rem; }
+.section-header {
+  margin-bottom: 2.2rem;
+}
 
 .section-kicker {
-  font-size: .78rem;
-  letter-spacing: .15em;
   text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.78rem;
   color: var(--accent-soft);
+  margin-bottom: 0.3rem;
 }
 
 .section-title {
   font-family: "Montserrat", system-ui, sans-serif;
   font-size: 2.1rem;
-  margin: .3rem 0 .6rem;
+  margin: 0 0 0.6rem;
 }
 
 .section-subtitle {
-  font-size: .95rem;
+  margin: 0;
+  font-size: 0.95rem;
   max-width: 40rem;
   color: var(--text-muted);
 }
@@ -100,7 +109,7 @@ section {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: linear-gradient(to bottom, rgba(2,20,32,.98), rgba(2,20,32,.9));
+  background: linear-gradient(to bottom, rgba(2, 20, 32, 0.98), rgba(2, 20, 32, 0.9));
   border-bottom: 1px solid #063047;
   backdrop-filter: blur(6px);
 }
@@ -108,90 +117,169 @@ section {
 .nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
+  padding: 1rem 0;
   min-height: 120px;
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: .7rem;
+  gap: 0.7rem;
   text-decoration: none;
 }
 
 .logo-img {
   height: 100px;
+  width: auto;
+  flex-shrink: 0;
   border-radius: 16px;
   border: 2px solid var(--accent-alt);
   padding: 4px;
-  background: radial-gradient(circle at 30% 0%, #ffe99a, #2fd1b4 60%, #021420);
-  box-shadow: 0 0 22px rgba(47,209,180,.75), 0 14px 30px rgba(0,0,0,.9);
+  background: radial-gradient(circle at 30% 0%, #ffe99a, #2fd1b4 60%, #021420 100%);
+  box-shadow: 0 0 22px rgba(47, 209, 180, 0.75), 0 14px 30px rgba(0, 0, 0, 0.9);
   animation: logo-pulse 2.4s ease-in-out infinite;
+  transform-origin: center;
 }
 
 .logo-main {
   font-family: "Montserrat", system-ui, sans-serif;
   font-weight: 600;
+  font-size: 1.05rem;
   color: #fff;
 }
 
 .logo-sub {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 1.3rem;
+  font-size: 0.9rem;
   margin-left: auto;
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
+  padding-bottom: 0.1rem;
   position: relative;
+  transition: color 0.18s ease-out;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible {
   color: var(--accent-soft);
-  animation: navBounce .45s ease-out;
+  animation: navBounce 0.45s ease-out;
 }
 
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -0.24rem;
   width: 100%;
   height: 2px;
   background: var(--accent);
+  border-radius: 999px;
   transform: scaleX(0);
-  transition: transform .2s;
+  transform-origin: center;
+  transition: transform 0.18s ease-out;
 }
 
-.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
 
-/* =====================
+/* Burger */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger-lines {
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 999px;
+  position: relative;
+}
+
+.burger-lines::before,
+.burger-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff;
+  transition: transform 0.18s ease-out, top 0.18s ease-out, bottom 0.18s ease-out,
+    opacity 0.18s ease-out;
+}
+
+.burger-lines::before {
+  top: -6px;
+}
+.burger-lines::after {
+  bottom: -6px;
+}
+
+.burger.open .burger-lines {
+  background: transparent;
+}
+.burger.open .burger-lines::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.burger.open .burger-lines::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0 0 0.9rem 0.2rem;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* =========
    BUTTONS
-   ===================== */
+   ========= */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: "Montserrat", system-ui, sans-serif;
-  font-size: .86rem;
+  font-size: 0.86rem;
   border-radius: 999px;
-  padding: .55rem 1.3rem;
+  padding: 0.55rem 1.3rem;
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: all .18s ease-out;
+  transition: background 0.18s ease-out, color 0.18s ease-out, border-color 0.18s ease-out,
+    transform 0.18s ease-out, box-shadow 0.18s ease-out;
 }
 
 .btn-outline {
   border-color: var(--accent);
   color: var(--accent-soft);
+  background: transparent;
 }
 
 .btn-outline:hover {
@@ -199,89 +287,289 @@ section {
   color: #021420;
 }
 
-/* =====================
+/* =====
    HERO
-   ===================== */
+   ===== */
+
+.hero {
+  padding: 4.5rem 0 4.2rem;
+}
 
 .hero-grid {
   max-width: 900px;
   margin: 0 auto;
 }
 
+.hero-media {
+  display: none;
+}
+
+.hero-kicker {
+  font-size: 0.9rem;
+  color: var(--accent-soft);
+  margin: 0 0 0.4rem;
+}
+
 .hero-title {
   font-family: "Montserrat", system-ui, sans-serif;
   font-size: 2.4rem;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 1rem;
 }
 
-.hero-highlight { color: var(--accent-soft); }
+.hero-highlight {
+  color: var(--accent-soft);
+}
+
+.hero-subtitle {
+  margin: 0 0 1.3rem;
+  font-size: 0.98rem;
+  max-width: 34rem;
+  color: var(--text-muted);
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1.3rem;
+}
 
 .hero-meta {
   display: flex;
-  gap: 1rem;
-  font-size: .82rem;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.4rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
+}
+
+.hero-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .hero-meta-dot {
   width: 6px;
   height: 6px;
-  background: var(--accent-alt);
   border-radius: 999px;
+  background: var(--accent-alt);
 }
 
-/* =====================
-   CARDS
-   ===================== */
+/* =========================
+   CARDS / PROOF
+   ========================= */
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.8rem;
 }
 
 .card {
   background: var(--bg-alt);
   border-radius: 1.1rem;
-  padding: 1.5rem;
+  padding: 1.4rem 1.5rem 1.5rem;
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 16px 32px rgba(1,6,13,.9);
+  box-shadow: 0 16px 32px rgba(1, 6, 13, 0.9);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
-/* =====================
-   FOOTER + WAVE
-   ===================== */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(1, 6, 13, 1);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+/* =========================
+   ABOUT
+   ========================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr);
+}
+
+.about-merged-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  background: var(--bg-alt);
+  border-radius: 1.1rem;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.about-merged-col h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 1.1rem;
+}
+
+.about-tagline {
+  font-size: 0.9rem;
+  color: var(--accent-soft);
+  margin-top: 0;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.7rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.about-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.45rem;
+}
+
+.about-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  font-size: 0.72rem;
+  color: var(--accent-alt);
+}
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact-box {
+  background: var(--bg-alt);
+  border-radius: 1.2rem;
+  padding: 1.8rem 1.6rem 1.7rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 16px 32px rgba(1, 6, 13, 0.9);
+}
+
+.contact-box h2 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 1.6rem;
+}
+
+.contact-box p {
+  margin: 0 0 0.8rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.contact-box-details p {
+  margin: 0.1rem 0;
+  font-size: 0.92rem;
+}
+
+.contact-box-details a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.18s ease-out;
+}
+
+.contact-box-details a:hover {
+  color: var(--accent-soft);
+}
+
+.contact-box-actions {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+/* =========================
+   FOOTER + WAVE (REALISTIC)
+   ========================= */
 
 footer {
   position: relative;
   background: #010b12;
   border-top: 1px solid #063047;
   overflow: hidden;
-  padding: 2.1rem 0 140px;
+  padding: 2.1rem 0 130px; /* space for wave */
 }
 
-footer .container { position: relative; z-index: 3; }
+footer .container {
+  position: relative;
+  z-index: 3;
+}
 
 .footer-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.6rem;
   flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.footer-logo {
+  height: 32px;
+  width: auto;
+  border-radius: 9px;
+  border: 1px solid var(--accent-alt);
+}
+
+.footer-brand p {
+  margin: 0;
+  font-size: 0.94rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .footer-links a {
   color: var(--text-muted);
   text-decoration: none;
+  transition: color 0.18s ease-out;
 }
 
-.footer-links a:hover { color: var(--accent-soft); }
+.footer-links a:hover {
+  color: var(--accent-soft);
+}
 
-/* SVG Wave */
+.footer-bottom {
+  margin-top: 1.3rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Wave wrapper */
 .wave-divider {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+  line-height: 0;
   z-index: 1;
 }
 
@@ -291,23 +579,43 @@ footer .container { position: relative; z-index: 3; }
   height: 120px;
 }
 
-/* Fill */
-.wave-fill { fill: #021420; }
-
-/* Foam follows wave line */
-.wave-foam-path {
-  fill: none;
-  stroke: rgba(255,255,255,.85);
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-dasharray: 12 18;
-  animation: foamFlow 3s linear infinite;
-  filter: drop-shadow(0 0 6px rgba(255,255,255,.2));
+/* Wave fill */
+.wave-fill {
+  fill: #021420;
 }
 
-/* =====================
+/* Foam stroke that follows the crest */
+.wave-foam-stroke {
+  fill: none;
+  stroke-linecap: round;
+  opacity: 0.75;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.18));
+}
+
+/* Two layers = more natural */
+.wave-foam-stroke-1 {
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 10;
+  stroke-dasharray: 2 18;
+  animation: foamFlow 6.5s linear infinite;
+}
+
+.wave-foam-stroke-2 {
+  stroke: rgba(255, 255, 255, 0.32);
+  stroke-width: 6;
+  stroke-dasharray: 1 26;
+  animation: foamFlow 9s linear infinite reverse;
+}
+
+@keyframes foamFlow {
+  to {
+    stroke-dashoffset: 220;
+  }
+}
+
+/* =========================
    CALL BUTTON
-   ===================== */
+   ========================= */
 
 .call-now-btn {
   position: fixed;
@@ -318,21 +626,25 @@ footer .container { position: relative; z-index: 3; }
   border-radius: 999px;
   background: var(--accent-alt);
   color: #021420;
-  font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  font-size: 1.4rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+  border: none;
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
   z-index: 30;
 }
 
-/* =====================
-   ANIMATIONS
-   ===================== */
-
-@keyframes foamFlow {
-  from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: -160; }
+.call-now-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 1);
 }
+
+/* =========================
+   ANIMATIONS
+   ========================= */
 
 @keyframes navBounce {
   0% { transform: translateY(0); }
@@ -342,20 +654,39 @@ footer .container { position: relative; z-index: 3; }
 }
 
 @keyframes logo-pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 18px rgba(47, 209, 180, 0.6), 0 12px 26px rgba(0, 0, 0, 0.9);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 32px rgba(255, 215, 90, 0.9), 0 18px 38px rgba(0, 0, 0, 1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 18px rgba(47, 209, 180, 0.6), 0 12px 26px rgba(0, 0, 0, 0.9);
+  }
 }
 
-/* =====================
+/* =========================
    RESPONSIVE
-   ===================== */
+   ========================= */
 
 @media (max-width: 960px) {
   .nav-links { display: none; }
+  .burger { display: block; }
 }
 
 @media (max-width: 720px) {
   section { padding: 3.4rem 0; }
+  .hero-title { font-size: 2.1rem; }
   .logo-img { height: 64px; }
+  .contact-box-actions { flex-direction: column; }
+  .call-now-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
 }
