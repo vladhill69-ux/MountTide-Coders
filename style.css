@@ -611,6 +611,30 @@ footer .container {
   to {
     stroke-dashoffset: 220;
   }
+   /* Optional: subtle breaking / pulsing effect */
+.wave-foam-stroke-1,
+.wave-foam-stroke-2 {
+  transform-origin: center;
+  animation-composition: add;
+}
+
+.wave-foam-stroke-1 {
+  animation:
+    foamFlow 5.2s linear infinite,
+    foamFade 2.6s ease-in-out infinite;
+}
+
+.wave-foam-stroke-2 {
+  animation:
+    foamFlow 7.4s linear infinite reverse,
+    foamFade 3.2s ease-in-out infinite;
+}
+
+@keyframes foamFade {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 0.95; }
+}
+
 }
 
 /* =========================
