@@ -597,27 +597,75 @@ footer .container {
 }
 
 /* foam above the wave crest */
-.wave-foam {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 70px;
-  height: 70px;
-  pointer-events: none;
-  z-index: 4;
+/* =========================
+   REALISTIC WAVE FOAM
+   ========================= */
+
+footer {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 90px; /* room for wave */
 }
 
-.wave-foam .foam {
+.wave-divider{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  line-height: 0;
+  z-index: 3;
+}
+
+.wave-divider svg{
+  display: block;
+  width: 100%;
+  height: 90px;
+}
+
+/* Foam band sits near the crest (top of wave) */
+.wave-foam{
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 42px;               /* adjust to match your wave crest */
+  height: 50px;
+  pointer-events: none;
+  z-index: 4;
+  filter: blur(0.2px);
+}
+
+/* Foam blobs: soft, irregular, not perfect circles */
+.wave-foam .foam{
   position: absolute;
   bottom: 0;
-  width: 12px;
-  height: 12px;
+  width: 46px;
+  height: 14px;
   border-radius: 999px;
-  border: 2px solid rgba(255,255,255,0.85);
-  background: rgba(255,255,255,0.15);
   opacity: 0;
-  animation: foamPop 2.4s ease-in-out infinite;
+  background:
+    radial-gradient(circle at 20% 60%, rgba(255,255,255,0.95) 0 22%, transparent 26%),
+    radial-gradient(circle at 45% 40%, rgba(255,255,255,0.75) 0 18%, transparent 24%),
+    radial-gradient(circle at 70% 65%, rgba(255,255,255,0.85) 0 20%, transparent 27%),
+    radial-gradient(circle at 88% 45%, rgba(255,255,255,0.65) 0 16%, transparent 22%);
+  mix-blend-mode: screen;
+  animation: foamDrift 4.2s ease-in-out infinite;
 }
+
+/* positions + timing */
+.b1{ left: 6%;  animation-delay: 0.0s; transform: scale(0.9); }
+.b2{ left: 18%; animation-delay: 0.8s; transform: scale(0.75); }
+.b3{ left: 32%; animation-delay: 1.6s; transform: scale(1.0); }
+.b4{ left: 46%; animation-delay: 0.4s; transform: scale(0.85); }
+.b5{ left: 60%; animation-delay: 1.2s; transform: scale(0.7); }
+.b6{ left: 72%; animation-delay: 2.0s; transform: scale(0.95); }
+.b7{ left: 84%; animation-delay: 0.6s; transform: scale(0.8); }
+.b8{ left: 92%; animation-delay: 1.4s; transform: scale(0.65); }
+
+@keyframes foamDrift{
+  0%   { opacity: 0;   transform: translateX(-18px) translateY(6px) scale(var(--s,1)); }
+  15%  { opacity: 0.8; }
+  55%  { opacity: 0.55; transform: translateX(22px) translateY(-6px) scale(var(--s,1)); }
+  100% { opacity: 0;   transform: translateX(40px) translateY(-10px) scale(var(--s,1)); }
+}
+
+
 
 .f1 { left: 10%; animation-delay: 0s; }
 .f2 { left: 22%; animation-delay: .5s; }
@@ -626,15 +674,7 @@ footer .container {
 .f5 { left: 72%; animation-delay: 1.4s; }
 .f6 { left: 88%; animation-delay: .8s; }
 
-.wave-foam .splash {
-  position: absolute;
-  bottom: 0;
-  width: 2px;
-  height: 28px;
-  background: linear-gradient(to top, rgba(255,255,255,0.95), rgba(255,255,255,0));
-  opacity: 0;
-  animation: splashUp 2.8s ease-out infinite;
-}
+
 
 .s1 { left: 16%; animation-delay: .2s; }
 .s2 { left: 34%; animation-delay: 1.0s; }
@@ -702,19 +742,7 @@ footer .container {
   }
 }
 
-@keyframes foamPop {
-  0%   { opacity: 0; transform: translateY(0) scale(0.6); }
-  20%  { opacity: 0.95; }
-  60%  { opacity: 0.55; transform: translateY(-26px) scale(1.15); }
-  100% { opacity: 0; transform: translateY(-46px) scale(1.35); }
-}
 
-@keyframes splashUp {
-  0%   { opacity: 0; transform: translateY(0); }
-  18%  { opacity: 1; }
-  55%  { opacity: 0.55; transform: translateY(-42px); }
-  100% { opacity: 0; transform: translateY(-66px); }
-}
 
 /* =========================
    RESPONSIVE
